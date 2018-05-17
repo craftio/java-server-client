@@ -8,10 +8,13 @@ public class Client {
     private static final int PORT = 666;
 
     public static void main(String[] args) {
+        send("hoi");
+    }
+
+    public static void send(String txt) {
         try {
             InetAddress ip = InetAddress.getByName("255.255.255.255");
-            String dataString = "Hoi";
-            byte[] b = dataString.getBytes();
+            byte[] b = txt.getBytes();
             DatagramPacket datagramPacket = new DatagramPacket(
                     b, b.length, ip, PORT
             );
@@ -20,6 +23,5 @@ public class Client {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 }

@@ -5,10 +5,11 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 
 public class Server {
+    private static final int PORT = 666;
 
     public static void main(String[] args) {
         try {
-            DatagramSocket socket = new DatagramSocket(17);
+            DatagramSocket socket = new DatagramSocket(PORT);
 
             byte[] buffer = new byte[256];
 

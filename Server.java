@@ -16,6 +16,10 @@ public class Server {
             DatagramPacket request = new DatagramPacket(buffer, buffer.length);
             socket.receive(request);
 
+            byte[] bytes = request.getData();
+            String resolt = new String(bytes, "UTF-8");
+            System.out.println(resolt);
+
             InetAddress clientAddress = request.getAddress();
             int clientPort = request.getPort();
 
